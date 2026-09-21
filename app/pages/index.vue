@@ -31,6 +31,17 @@ const confidants = [
     hoverImage: '/images/confidants/Ann/hover.jpg',
   },
 ]
+
+const title = ref('P5 Companion')
+const description = ref('P5 Companion')
+
+useHead({
+  title,
+  meta: [{
+    name: 'description',
+    content: description,
+  }],
+})
 </script>
 
 <template>
