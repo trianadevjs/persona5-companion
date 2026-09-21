@@ -1,0 +1,509 @@
+
+/* ============================= */
+/* PAGE                          */
+/* ============================= */
+
+.home-page {
+  min-height: 100vh;
+
+  background:
+    #f2f2f2;
+}
+
+
+/* ============================= */
+/* HERO                          */
+/* ============================= */
+
+.hero {
+  box-sizing: border-box;
+  position: relative;
+
+  min-height: 650px;
+
+  display: flex;
+  align-items: center;
+
+  padding:
+    5rem
+    clamp(2rem, 7vw, 8rem);
+
+  overflow: hidden;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(220, 0, 15, 1) 0%,
+      rgba(220, 0, 15, 0.95) 38%,
+      rgba(220, 0, 15, 0.65) 65%,
+      rgba(0, 0, 0, 0.25) 100%
+    ),
+    url('/images/take-your-time.png');
+
+  background-size: cover;
+  background-position: center right;
+}
+
+
+/* Oscurece ligeramente la imagen */
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      110deg,
+      transparent 55%,
+      rgba(0, 0, 0, 0.35)
+    );
+
+  pointer-events: none;
+}
+
+
+/* ============================= */
+/* COMIC TEXTURE                 */
+/* ============================= */
+
+.hero-noise {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.2;
+
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(
+      rgba(0, 0, 0, 0.7) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    5px 5px;
+
+  mix-blend-mode: multiply;
+}
+
+
+/* ============================= */
+/* HERO CONTENT                  */
+/* ============================= */
+
+.hero-content {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(700px, 100%);
+}
+
+
+/* ============================= */
+/* TAKE YOUR TIME                */
+/* ============================= */
+
+.take-your-time {
+  position: relative;
+
+  display: inline-block;
+
+  margin-left: 1rem;
+  margin-bottom: 0.4rem;
+
+  padding:
+    0.5rem
+    1.5rem;
+
+  color: #050505;
+  background: white;
+
+  font-size: 1.25rem;
+  font-weight: 1000;
+
+  letter-spacing: 0.04em;
+
+  transform:
+    rotate(-4deg)
+    skew(-4deg);
+
+  box-shadow:
+    8px 7px 0 #050505;
+}
+
+
+/* ============================= */
+/* TITLE                         */
+/* ============================= */
+
+.title {
+  position: relative;
+
+  margin-top: 0.5rem;
+
+  transform:
+    rotate(-3deg);
+}
+
+
+.title h1,
+.title h2 {
+  width: fit-content;
+
+  margin: 0;
+
+  line-height: 0.82;
+
+  font-weight: 1000;
+
+  letter-spacing: -0.07em;
+}
+
+
+/* CONFIDANT */
+
+.title h1 {
+  position: relative;
+
+  z-index: 2;
+
+  padding:
+    0.1em
+    0.15em;
+
+  color: white;
+
+  background: #050505;
+
+  font-size:
+    clamp(4rem, 8vw, 8rem);
+
+  text-shadow:
+    4px 4px 0 #050505;
+}
+
+
+/* TRACKER */
+
+.title h2 {
+  position: relative;
+
+  z-index: 3;
+
+  margin-top: -0.03em;
+  margin-left: 3rem;
+
+  padding:
+    0.05em
+    0.2em
+    0.12em;
+
+  color: #e60012;
+
+  background: #050505;
+
+  font-size:
+    clamp(4rem, 8vw, 8rem);
+
+  transform:
+    rotate(-2deg);
+}
+
+
+/* White accent */
+
+.title h2::after {
+  content: "";
+
+  position: absolute;
+
+  left: 20%;
+  right: -2%;
+
+  bottom: -8px;
+
+  height: 7px;
+
+  background: white;
+
+  transform:
+    rotate(-2deg);
+
+  z-index: -1;
+}
+
+
+/* ============================= */
+/* DESCRIPTION                   */
+/* ============================= */
+
+.description {
+  margin-top: 2.5rem;
+
+  font-size: 1.15rem;
+  font-weight: 700;
+
+  line-height: 1.5;
+
+  transform:
+    rotate(-1deg);
+}
+
+
+.description span {
+  display: table;
+
+  margin-bottom: 3px;
+
+  padding:
+    0.15rem
+    0.5rem;
+
+  color: white;
+
+  background: #050505;
+}
+
+
+/* ============================= */
+/* BUTTON                        */
+/* ============================= */
+
+.start-button {
+  box-sizing: border-box;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: min(360px, 80%);
+
+  margin-top: 2rem;
+
+  padding:
+    1rem
+    2rem;
+
+  color: white;
+
+  background:
+    #050505;
+
+  border:
+    6px solid white;
+
+  text-decoration: none;
+
+  font-size: 1.15rem;
+  font-weight: 1000;
+
+  transform:
+    rotate(-2deg)
+    skew(-5deg);
+
+  box-shadow:
+    5px 6px 0
+    #050505;
+
+  transition:
+    transform 120ms ease,
+    background 120ms ease,
+    color 120ms ease;
+}
+
+
+.start-button span,
+.start-button strong {
+  transform:
+    skew(5deg);
+}
+
+
+.start-button strong {
+  font-size: 2rem;
+
+  line-height: 0;
+}
+
+
+.start-button:hover {
+  color: #050505;
+
+  background: white;
+
+  transform:
+    rotate(-3deg)
+    skew(-5deg)
+    scale(1.05);
+}
+
+
+/* ============================= */
+/* PROGRESS SECTION              */
+/* ============================= */
+
+.progress-section {
+  position: relative;
+
+  padding:
+    4rem
+    clamp(2rem, 7vw, 8rem);
+
+  background:
+    #f5f5f5;
+}
+
+
+.section-header {
+  margin-bottom:
+    2.5rem;
+
+  transform:
+    rotate(-1deg);
+}
+
+
+.section-header span {
+  display: inline-block;
+
+  padding:
+    0.2rem
+    0.5rem;
+
+  color: white;
+  background: #e60012;
+
+  font-weight: 900;
+}
+
+
+.section-header h2 {
+  margin:
+    0.3rem
+    0;
+
+  color:
+    #050505;
+
+  font-size:
+    clamp(1.8rem, 6vw, 4rem);
+
+  font-weight:
+    1000;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* ============================= */
+/* CONFIDANT GRID                */
+/* ============================= */
+
+.confidants-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap:
+    1.5rem;
+}
+
+
+/* ============================= */
+/* RESPONSIVE                    */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .hero {
+    min-height:
+      520px;
+
+    padding:
+      3rem 1.5rem;
+
+    background-position:
+      65% center;
+  }
+
+
+  .hero-content {
+    width:
+      100%;
+  }
+
+
+  .title h1,
+  .title h2 {
+    font-size:
+      clamp(
+        2rem,
+        12vw,
+        5rem
+      );
+  }
+
+
+  .title h2 {
+    margin-left:
+      1rem;
+  }
+
+
+  .take-your-time {
+    font-size:
+      0.9rem;
+  }
+
+
+  .description {
+    font-size:
+      0.95rem;
+  }
+
+
+  .progress-section {
+    padding:
+      3rem 1.5rem;
+  }
+
+}
+
+@media (max-width: 1100px) {
+  .confidants-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 460px;
+    padding: 3rem 1.25rem;
+  }
+
+  .start-button {
+    width: min(360px, 95%);
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+  }
+
+  .progress-section {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .confidants-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin-inline: auto;
+    gap: 1.75rem;
+  }
+}
