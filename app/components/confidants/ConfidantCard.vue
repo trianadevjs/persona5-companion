@@ -41,7 +41,7 @@ const progress = computed(() => {
 
     <!-- Imagen hover -->
     <img
-      :src="hoverImage"
+      :src="hoverImageSrc"
       alt=""
       class="card-image card-image-hover"
     >
