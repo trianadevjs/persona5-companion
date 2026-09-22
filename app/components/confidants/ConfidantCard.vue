@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { withBase } from 'ufo'
+
 interface Props {
   id: string
   arcana: string
@@ -9,9 +11,20 @@ interface Props {
 
 const props = defineProps<Props>()
 
+const appConfig = useRuntimeConfig()
+
+const imageSrc = computed(() =>
+  withBase(props.image, appConfig.app.baseURL)
+)
+
+const hoverImageSrc = computed(() =>
+  withBase(props.hoverImage, appConfig.app.baseURL)
+)
+
 const progress = computed(() => {
   return Math.min(Math.max(props.rank, 0), 10) * 10
 })
+
 </script>
 
 <template>
@@ -21,7 +34,7 @@ const progress = computed(() => {
   >
     <!-- Imagen normal -->
     <img
-      :src="image"
+      :src="imageSrc"
       :alt="id"
       class="card-image card-image-default"
     >

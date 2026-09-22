@@ -10,7 +10,7 @@ export default defineNuxtConfig({
         }
       ]
     },
-    baseURL: '/persona5-companion/'
+    baseURL: process.env.NUXT_APP_BASE_URL || '/'
   },
   nitro: {
     preset: 'static'
